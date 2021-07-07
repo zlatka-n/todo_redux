@@ -33,22 +33,6 @@ class Main extends React.Component {
     this.props.addTodo(this.state.input.text);
   };
 
-  renderList = () => {
-    //nested data structure - took me a while to solve, there is "todo" array with objects inside
-    //__proto__: Object => I need an array for mapping, otherwise error: "todoArray.map is not function". Therefore using Object.values() method
-    let todoArray = Object.values(this.props.todos);
-    const mapArray = todoArray.map((item) => {
-      //mapping again to get access to object properties "text" and "id", __proto__: Array when console.log(item)
-      const getObjectProps = item.map((el) => {
-        // console.log(el);
-        return <p key={el.id}>{el.text}</p>;
-      });
-      return getObjectProps;
-    });
-
-    return mapArray;
-  };
-
   render() {
     return (
       <div className="todo-box">
@@ -58,17 +42,11 @@ class Main extends React.Component {
           input={this.state.input}
           onSubmitForm={this.onSubmitForm}
         />
-        {/* <List todoObject={this.props.todos} /> */}
-        {this.renderList()}
+        <List />
+        {/* {this.renderList()} */}
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    todos: state.todos,
-  };
-};
-
-export default connect(mapStateToProps, { addTodo })(Main);
+export default connect(null, { addTodo })(Main);
