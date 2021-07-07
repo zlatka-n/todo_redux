@@ -10,8 +10,24 @@ const List = (props) => {
     const mapArray = todoArray.map((item) => {
       //mapping again to get access to object properties "text" and "id", __proto__: Array when console.log(item)
       const getObjectProps = item.map((el) => {
-        // console.log(el);
-        return <p key={el.id}>{el.text}</p>;
+        const renderButton = () => {
+          if (el.id) {
+            return (
+              <div className="editDeleteBtn">
+                <button>Delete</button>
+                <button>Edit</button>
+              </div>
+            );
+          }
+        };
+        return (
+          <div className="todoListContainer">
+            <div>
+              <p key={el.id}>{el.text}</p>
+            </div>
+            <div>{renderButton()}</div>
+          </div>
+        );
       });
       return getObjectProps;
     });

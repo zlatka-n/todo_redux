@@ -36,7 +36,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="todo-box">
-        <h2>Main</h2>
+        <h2>Add your todos :)</h2>
         <Form
           onInputChange={this.onInputChange}
           input={this.state.input}

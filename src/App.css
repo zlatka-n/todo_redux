@@ -1,4 +1,25 @@
 .App {
   display: flex;
   justify-content: space-evenly;
+  box-sizing: border-box;
+}
+
+.todo-box {
+  width: 400px;
+}
+
+.addForm,
+h2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.todoListContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.editDeleteBtn {
+  margin-left: 40px;
 }
