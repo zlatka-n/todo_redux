@@ -14,8 +14,8 @@ const List = (props) => {
           if (el.id) {
             return (
               <div className="editDeleteBtn">
-                <button>Delete</button>
-                <button>Edit</button>
+                <button id="deleteBtn">Delete</button>
+                <button id="editBtn">Edit</button>
               </div>
             );
           }
