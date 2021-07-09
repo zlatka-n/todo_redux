@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TODO":
       return {
-        // that has all the existing state data
+        // existing state data
         ...state,
         // but has a new array for the `todos` field
         todos: [
@@ -25,7 +25,15 @@ export default (state = initialState, action) => {
           },
         ],
       };
-
+    case "DELETE_TODO":
+      return {
+        ...state,
+        todos: [
+          ...state.todos.filter((item) => {
+            return item.id !== action.payload;
+          }),
+        ],
+      };
     default:
       return state;
   }

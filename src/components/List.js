@@ -1,8 +1,17 @@
 //TODO: mapStateToProps => store, listing todos
 import React from "react";
 import { connect } from "react-redux";
+import { deleteTodo } from "../actions/index";
 
 const List = (props) => {
+  //delete item onClick
+
+  const deleteItem = (id) => {
+    props.deleteTodo(id);
+    console.log("delete");
+    console.log(id);
+  };
+
   const renderList = () => {
     //nested data structure - took me a while to solve, there is "todo" array with objects inside
     //__proto__: Object => I need an array for mapping, otherwise error: "todoArray.map is not function". Therefore using Object.values() method
@@ -14,7 +23,7 @@ const List = (props) => {
           if (el.id) {
             return (
               <div className="editDeleteBtn">
-                <button>Delete</button>
+                <button onClick={() => deleteItem(el.id)}>Delete</button>
                 <button>Edit</button>
               </div>
             );
@@ -23,7 +32,9 @@ const List = (props) => {
         return (
           <div className="todoListContainer">
             <div>
-              <p key={el.id}>{el.text}</p>
+              <p key={el.id}>
+                {el.text} {el.id}
+              </p>
             </div>
             <div>{renderButton()}</div>
           </div>
@@ -48,4 +59,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps, { deleteTodo })(List);
