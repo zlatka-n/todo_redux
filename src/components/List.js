@@ -23,8 +23,10 @@ const List = (props) => {
           if (el.id) {
             return (
               <div className="editDeleteBtn">
-                <button onClick={() => deleteItem(el.id)}>Delete</button>
-                <button>Edit</button>
+                <button id="deleteBtn" onClick={() => deleteItem(el.id)}>
+                  Delete
+                </button>
+                <button id="editBtn">Edit</button>
               </div>
             );
           }

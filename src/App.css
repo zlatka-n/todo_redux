@@ -5,7 +5,7 @@
 }
 
 .todo-box {
-  width: 400px;
+  width: 300px;
 }
 
 .addForm,
@@ -20,6 +20,6 @@ h2 {
   align-items: center;
 }
 
-.editDeleteBtn {
-  margin-left: 40px;
+#deleteBtn {
+  margin-right: 10px;
 }
