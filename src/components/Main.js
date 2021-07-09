@@ -29,8 +29,8 @@ class Main extends React.Component {
         text: "",
       },
     });
-
-    this.props.addTodo(this.state.input.text);
+    if (this.state.input.text !== "") this.props.addTodo(this.state.input.text);
+    // this.props.addTodo(this.state.input.text);
   };
 
   render() {
