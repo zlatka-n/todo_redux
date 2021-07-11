@@ -51,10 +51,7 @@ const List = (props) => {
         const renderButton = () => {
           if (el.id) {
             return (
-              <div className="editDeleteBtn">
-                {/* <button id="deleteBtn" onClick={() => deleteItem(el.id)}>
-                  Delete
-                </button> */}
+              <div key={el.id} className="editDeleteBtn">
                 <button
                   id="deleteBtn"
                   onClick={() => props.onDeleteClick(el.id)}
@@ -73,10 +70,8 @@ const List = (props) => {
         };
         return (
           <div className="todoListContainer">
-            <div>
-              <p key={el.id}>
-                {el.text} {el.id}
-              </p>
+            <div key={el.id}>
+              <p>{el.text}</p>
             </div>
             <div>{renderButton()}</div>
           </div>
