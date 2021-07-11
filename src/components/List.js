@@ -26,7 +26,9 @@ const List = (props) => {
       value: "",
     });
 
-    props.editTodo(edit.id, edit.text);
+    if (edit.text !== "") {
+      props.editTodo(edit.id, edit.text);
+    }
   };
 
   //show form when clicking edit

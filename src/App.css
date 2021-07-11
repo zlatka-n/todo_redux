@@ -14,6 +14,17 @@ h2 {
   justify-content: space-evenly;
 }
 
+.updateForm {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.input {
+  width: 120px;
+  border-radius: 5px;
+}
+
 .todoListContainer {
   display: flex;
   justify-content: space-between;
@@ -21,5 +32,16 @@ h2 {
 }
 
 #deleteBtn {
-  margin-right: 10px;
+  margin-right: 5px;
+}
+
+.addEditBtn {
+  margin-left: 5px;
+}
+
+button {
+  border-radius: 5px;
+  border: transparent;
+  width: 50px;
+  height: 25px;
 }

@@ -14,7 +14,7 @@ class Form extends React.Component {
               value={this.props.editValue.text}
               onChange={this.props.onEditChange}
             ></input>
-            <button className="addBtn">Update</button>
+            <button className="addEditBtn">Edit</button>
           </form>
         </div>
       );
@@ -24,12 +24,13 @@ class Form extends React.Component {
       <div className="addForm">
         <form onSubmit={this.props.onSubmitForm}>
           <input
+            placeholder="todo here"
+            className="input"
             onChange={this.props.onInputChange}
             value={this.props.input.text}
           ></input>
-          <button className="addBtn">Add</button>
+          <button className="addEditBtn">Add</button>
         </form>
-        {/* <button className="addBtn">Add</button> */}
       </div>
     );
   }
