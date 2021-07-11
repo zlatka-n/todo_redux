@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 const initialState = {
   todos: [
     {
@@ -8,6 +6,7 @@ const initialState = {
     },
   ],
 };
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TODO":
@@ -31,6 +30,21 @@ export default (state = initialState, action) => {
         todos: [
           ...state.todos.filter((item) => {
             return item.id !== action.payload;
+          }),
+        ],
+      };
+    case "EDIT_TODO":
+      return {
+        ...state,
+        todos: [
+          ...state.todos.map((item) => {
+            if (item.id !== action.payload.id) {
+              return item;
+            }
+            return {
+              ...item,
+              ...action.payload,
+            };
           }),
         ],
       };

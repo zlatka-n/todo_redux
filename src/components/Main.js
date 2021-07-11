@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./Form";
 import { connect } from "react-redux";
 import List from "./List";
-import { addTodo } from "../actions/index.js";
+import { addTodo, deleteTodo, editTodo } from "../actions/index.js";
 
 class Main extends React.Component {
   constructor(props) {
@@ -29,8 +29,14 @@ class Main extends React.Component {
         text: "",
       },
     });
-    if (this.state.input.text !== "") this.props.addTodo(this.state.input.text);
+    if (this.state.input.text !== "") {
+      this.props.addTodo(this.state.input.text);
+    }
     // this.props.addTodo(this.state.input.text);
+  };
+
+  onDeleteClick = (id) => {
+    this.props.deleteTodo(id);
   };
 
   render() {
@@ -42,11 +48,13 @@ class Main extends React.Component {
           input={this.state.input}
           onSubmitForm={this.onSubmitForm}
         />
-        <List />
-        {/* {this.renderList()} */}
+        <List
+          onDeleteClick={this.onDeleteClick}
+          onEditClick={this.onEditClick}
+        />
       </div>
     );
   }
 }
 
-export default connect(null, { addTodo })(Main);
+export default connect(null, { addTodo, deleteTodo, editTodo })(Main);

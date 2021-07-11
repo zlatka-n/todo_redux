@@ -1,16 +1,45 @@
 //TODO: mapStateToProps => store, listing todos
 import React from "react";
 import { connect } from "react-redux";
-import { deleteTodo } from "../actions/index";
+import { useState } from "react";
+import { editTodo } from "../actions";
+import Form from "./Form";
 
 const List = (props) => {
-  //delete item onClick
+  ///EDITING TODO SECTION//
+  const [edit, setEdit] = useState({
+    id: null,
+    text: "",
+  });
 
-  const deleteItem = (id) => {
-    props.deleteTodo(id);
-    console.log("delete");
-    console.log(id);
+  const onEditChange = (event) => {
+    setEdit({
+      id: edit.id,
+      text: event.target.value,
+    });
   };
+
+  const onEditSubmit = (event) => {
+    event.preventDefault();
+    setEdit({
+      id: null,
+      value: "",
+    });
+
+    props.editTodo(edit.id, edit.text);
+  };
+
+  //show form when clicking edit
+  if (edit.id) {
+    return (
+      //passing new functions and value for edit form
+      <Form
+        onEditChange={onEditChange}
+        onEditSubmit={onEditSubmit}
+        editValue={edit}
+      />
+    );
+  }
 
   const renderList = () => {
     //nested data structure - took me a while to solve, there is "todo" array with objects inside
@@ -23,10 +52,21 @@ const List = (props) => {
           if (el.id) {
             return (
               <div className="editDeleteBtn">
-                <button id="deleteBtn" onClick={() => deleteItem(el.id)}>
+                {/* <button id="deleteBtn" onClick={() => deleteItem(el.id)}>
+                  Delete
+                </button> */}
+                <button
+                  id="deleteBtn"
+                  onClick={() => props.onDeleteClick(el.id)}
+                >
                   Delete
                 </button>
-                <button id="editBtn">Edit</button>
+                <button
+                  id="editBtn"
+                  onClick={() => setEdit({ id: el.id, text: el.text })}
+                >
+                  Edit
+                </button>
               </div>
             );
           }
@@ -61,4 +101,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { deleteTodo })(List);
+export default connect(mapStateToProps, { editTodo })(List);

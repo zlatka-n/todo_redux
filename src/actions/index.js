@@ -11,3 +11,13 @@ export const deleteTodo = (id) => {
     payload: id,
   };
 };
+
+export const editTodo = (id, newValue) => {
+  return {
+    type: "EDIT_TODO",
+    payload: {
+      id: id,
+      text: newValue,
+    },
+  };
+};
