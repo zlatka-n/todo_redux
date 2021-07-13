@@ -72,10 +72,10 @@ const List = (props) => {
         };
         return (
           <div className="todoListContainer">
-            <div key={el.id}>
+            <div id="todoText" key={el.id}>
               <p>{el.text}</p>
             </div>
-            <div>{renderButton()}</div>
+            <div className="editDeleteBtn">{renderButton()}</div>
           </div>
         );
       });
