@@ -24,7 +24,6 @@ class Form extends React.Component {
       <div className="addForm">
         <form onSubmit={this.props.onSubmitForm}>
           <input
-            placeholder="todo here"
             className="input"
             onChange={this.props.onInputChange}
             value={this.props.input.text}

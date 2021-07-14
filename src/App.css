@@ -2,11 +2,16 @@
   display: flex;
   justify-content: space-evenly;
   box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+  font-size: 12px;
 }
 
 .todo-box {
-  width: 300px;
+  width: 400px;
+  min-height: 440px;
+  background: #ff6666;
+  padding: 10px 10px 20px 10px;
+  border-radius: 5px;
 }
 
 .addForm,
@@ -37,12 +42,15 @@ h2 {
   margin-bottom: -5px;
 }
 #todoText {
+  padding-left: 20px;
   grid-column: 1 / span 2;
 }
 
 .editDeleteBtn {
   grid-column: 3 / span 1;
+  justify-self: end;
   align-self: center;
+  padding-right: 10px;
 }
 
 #deleteBtn {
@@ -59,6 +67,8 @@ button {
   width: 47px;
   height: 25px;
   background-color: #f0f0f5;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+  font-size: 12px;
 }
 
 button:hover {
