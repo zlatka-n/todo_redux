@@ -72,10 +72,21 @@ const List = (props) => {
             );
           }
         };
+
+        const renderCheckBox = () => {
+          if (el.id) {
+            return (
+              <React.Fragment>
+                <input type="checkbox"></input>
+              </React.Fragment>
+            );
+          }
+        };
         return (
           <div className="todoListContainer">
             <div id="todoText" key={el.id}>
-              <p>{el.text}</p>
+              <div className="checkbox">{renderCheckBox()}</div>
+              {el.text}
             </div>
             <div className="editDeleteBtn">{renderButton()}</div>
           </div>

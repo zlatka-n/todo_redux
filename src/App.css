@@ -5,8 +5,6 @@ body {
 .App {
   display: flex;
   justify-content: space-evenly;
-  /* align-items: center;
-  height: 100vh; */
   box-sizing: border-box;
   font-family: Geneva, Tahoma, Verdana, sans-serif;
   font-size: 12px;
@@ -41,13 +39,19 @@ h2 {
   border: 1px solid grey;
 }
 
-.todoListContainer {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+.checkbox {
+  float: left;
+}
+.todoListContainer:first-child {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: -5px;
+  margin-top: 0px;
+}
+
+.todoListContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 15px;
 }
 #todoText {
   padding-left: 20px;
