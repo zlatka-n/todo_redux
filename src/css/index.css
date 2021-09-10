@@ -16,7 +16,8 @@ body {
   font-size: 12px;
   background-color: #04bfad;
   width: 50%;
-  margin-top: 40px;
+  margin-top: 50px;
+  margin-bottom: 20px;
   margin-left: 25%;
   margin-right: 25%;
   border-radius: 5px;
@@ -25,17 +26,29 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 600px;
-}
-button {
-  /* border-radius: 5px;
-  border: transparent;
-  background-color: #04bfad;
-  border: 1px solid white;
-  font-family: Geneva, Tahoma, Verdana, sans-serif;
-  color: white; */
+  min-height: 800px;
 }
 
 input {
   outline: none;
+}
+
+h1 {
+  margin: 0 auto;
+  margin-top: 20px;
+  color: white;
+  font-size: 2.5em;
+}
+
+@media screen and (max-width: 769px) {
+  .App {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 10px;
+  }
+
+  .todo-box {
+    min-height: 500px;
+  }
 }
