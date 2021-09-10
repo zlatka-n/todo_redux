@@ -8,7 +8,7 @@ class Form extends React.Component {
     if (this.props.editValue) {
       return (
         <div className="updateForm">
-          <form onSubmit={this.props.onEditSubmit}>
+          <form onSubmit={this.props.onEditSubmit} className="addForm">
             <input
               className="input"
               value={this.props.editValue.text}

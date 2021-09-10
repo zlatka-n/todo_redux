@@ -70,18 +70,18 @@ const List = (props) => {
           }
         };
 
-        const renderCheckBox = () => {
-          if (el.id) {
-            return (
-              <React.Fragment>
-                <label className="check">
-                  <input type="checkbox"></input>
-                  <span></span>
-                </label>
-              </React.Fragment>
-            );
-          }
-        };
+        // const renderCheckBox = () => {
+        //   if (el.id) {
+        //     return (
+        //       <React.Fragment>
+        //         <label className="check">
+        //           <input type="checkbox"></input>
+        //           <span></span>
+        //         </label>
+        //       </React.Fragment>
+        //     );
+        //   }
+        // };
         return (
           <div className="todoListContainer" key={el.id}>
             {/* <div className="checkboxRendered">{renderCheckBox()}</div> */}

@@ -42,7 +42,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="todo-box">
-        <h2>Add your todos :)</h2>
+        <h1>Your todos</h1>
         <Form
           onInputChange={this.onInputChange}
           input={this.state.input}
