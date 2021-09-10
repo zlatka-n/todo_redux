@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { useState } from "react";
 import { editTodo } from "../actions";
 import Form from "./Form";
+import "../css/List.css";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
 const List = (props) => {
   ///EDITING TODO SECTION//
@@ -54,18 +56,15 @@ const List = (props) => {
           if (el.id) {
             return (
               <div key={el.id} className="editDeleteBtn">
-                <button
+                <AiFillDelete
                   id="deleteBtn"
                   onClick={() => props.onDeleteClick(el.id)}
-                >
-                  Delete
-                </button>
-                <button
+                ></AiFillDelete>
+
+                <AiFillEdit
                   id="editBtn"
                   onClick={() => setEdit({ id: el.id, text: el.text })}
-                >
-                  Edit
-                </button>
+                ></AiFillEdit>
               </div>
             );
           }
@@ -75,17 +74,18 @@ const List = (props) => {
           if (el.id) {
             return (
               <React.Fragment>
-                <input type="checkbox"></input>
+                <label className="check">
+                  <input type="checkbox"></input>
+                  <span></span>
+                </label>
               </React.Fragment>
             );
           }
         };
         return (
-          <div className="todoListContainer">
-            <div id="todoText" key={el.id}>
-              <div className="checkbox">{renderCheckBox()}</div>
-              {el.text}
-            </div>
+          <div className="todoListContainer" key={el.id}>
+            {/* <div className="checkboxRendered">{renderCheckBox()}</div> */}
+            <div className="todoText">{el.text}</div>
             <div className="editDeleteBtn">{renderButton()}</div>
           </div>
         );
