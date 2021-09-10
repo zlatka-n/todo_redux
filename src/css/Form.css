@@ -1,0 +1,32 @@
+.addForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 60%;
+  height: 40px;
+  border-radius: 2px;
+  border: none;
+  font-size: 1.8em;
+}
+
+.addEditBtn {
+  width: 10%;
+  box-sizing: border-box;
+  margin-left: 10px;
+
+  border-radius: 2px;
+  border: transparent;
+  background-color: #04bfad;
+  border: 1px solid white;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+  color: white;
+}
+
+button:hover {
+  background-color: #06ead3;
+}
