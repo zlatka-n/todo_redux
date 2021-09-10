@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../css/Form.css";
 class Form extends React.Component {
   //onSubmit, action dispatcher ADD_TODO, store => mapping in component List.js
 
@@ -22,7 +22,7 @@ class Form extends React.Component {
 
     return (
       <div className="addForm">
-        <form onSubmit={this.props.onSubmitForm}>
+        <form onSubmit={this.props.onSubmitForm} className="addForm">
           <input
             className="input"
             onChange={this.props.onInputChange}

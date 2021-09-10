@@ -5,8 +5,6 @@ import { useState } from "react";
 import { editTodo } from "../actions";
 import Form from "./Form";
 
-//<i class="fa-solid fa-square-check"></i>
-
 const List = (props) => {
   ///EDITING TODO SECTION//
   const [edit, setEdit] = useState({

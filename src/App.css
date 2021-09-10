@@ -1,3 +1,5 @@
+/*#D99CB8 #F238B1 #04BFAD #F2AB27 #F26666*/
+
 body {
   min-height: 100vh;
 }
@@ -42,6 +44,7 @@ h2 {
 .checkbox {
   float: left;
 }
+
 .todoListContainer:first-child {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
