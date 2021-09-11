@@ -6,7 +6,7 @@ Although there are millions of todo lists, I decided to also create one - I want
 
 do CRUD operations for todos
 
-You can view the todo app here https://todo-redux-lid470fzt-zlatka-n.vercel.app/. Colors were chosen from Adobe color pallete.
+You can view the todo app here https://todo-redux-zlatka-n.vercel.app/. Colors were chosen from Adobe color pallete.
 
 ## Tech stack (libraries) used:
 
