@@ -22,7 +22,7 @@
 
   border-radius: 2px;
   border: transparent;
-  background-color: #04bfad;
+  background-color: #6c93f5;
   border: 1px solid white;
   font-family: Geneva, Tahoma, Verdana, sans-serif;
   font-size: 1.5em;
@@ -30,7 +30,7 @@
 }
 
 button:hover {
-  background-color: #06ead3;
+  background-color: #8aabff;
 }
 
 @media screen and (max-width: 769px) {

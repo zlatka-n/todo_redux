@@ -6,7 +6,7 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background-color: #f238b1;
+  background-color: #a88328;
 }
 
 .App {
@@ -14,7 +14,7 @@ body {
   justify-content: center;
   font-family: Geneva, Tahoma, Verdana, sans-serif;
   font-size: 12px;
-  background-color: #04bfad;
+  background-color: #8aabff;
   width: 50%;
   margin-top: 50px;
   margin-bottom: 20px;
